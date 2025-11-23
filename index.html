@@ -9,8 +9,8 @@
     <meta name="theme-color" content="#020617">
     <meta name="description" content="A physics sandbox game with falling sand and voxels.">
     
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="/manifest.json">
+    <!-- PWA Manifest - Use relative path -->
+    <link rel="manifest" href="./manifest.json">
     
     <!-- Icons (Using standard emoji as placeholder icon) -->
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png">
@@ -64,6 +64,9 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- Main Entry Point -->
+    <script type="module" src="./index.tsx"></script>
+    
     <script>
       // Basic Service Worker Registration for PWA support
       if ('serviceWorker' in navigator) {
