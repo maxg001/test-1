@@ -1,10 +1,15 @@
 import { GoogleGenAI, Type } from "@google/genai";
 import { AIStructureResponse } from "../types";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const generateVoxelStructure = async (prompt: string): Promise<AIStructureResponse> => {
   try {
+    // Lazy initialization to prevent crash on app load if key is missing
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      throw new Error("API Key is missing. Please configure Vercel Environment Variables.");
+    }
+    const ai = new GoogleGenAI({ apiKey });
+
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: `Generate a 2D pixel art scene for a falling sand physics game based on: "${prompt}". 

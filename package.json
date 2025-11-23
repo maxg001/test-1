@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -14,9 +14,8 @@
     "three": "^0.160.0",
     "@react-three/fiber": "^8.15.12",
     "@react-three/drei": "^9.96.1",
-    "@google/genai": "^0.1.1",
-    "lucide-react": "^0.309.0",
-    "nanoid": "^5.0.4"
+    "@google/genai": "^0.1.2",
+    "lucide-react": "^0.309.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
