@@ -9,18 +9,21 @@
     <meta name="theme-color" content="#020617">
     <meta name="description" content="A physics sandbox game with falling sand and voxels.">
     
-    <!-- PWA Manifest - Use relative path -->
+    <!-- PWA Manifest -->
     <link rel="manifest" href="./manifest.json">
     
-    <!-- Icons (Using standard emoji as placeholder icon) -->
+    <!-- Icons -->
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png">
     <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png">
 
     <title>Pixel Fluid Sandbox</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
     <style>
       body { 
         font-family: 'Inter', sans-serif; 
@@ -29,49 +32,39 @@
         -webkit-user-select: none;
         touch-action: none;
         overscroll-behavior: none;
-        background-color: #020617; /* Prevents white flashes on load */
+        background-color: #020617;
+        margin: 0;
       }
       #root { width: 100vw; height: 100vh; }
       
-      /* Custom Scrollbar for Hotbar */
-      .custom-scrollbar::-webkit-scrollbar {
-        height: 4px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-track {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 10px;
-      }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 10px;
-      }
+      .custom-scrollbar::-webkit-scrollbar { height: 4px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: rgba(255, 255, 255, 0.05); border-radius: 10px; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 10px; }
     </style>
   <script type="importmap">
 {
   "imports": {
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "three": "https://aistudiocdn.com/three@^0.181.2",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
-    "three": "https://aistudiocdn.com/three@^0.181.2",
-    "nanoid": "https://aistudiocdn.com/nanoid@^5.1.6",
-    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.0",
-    "@react-three/drei": "https://aistudiocdn.com/@react-three/drei@^10.7.7"
+    "vite": "https://aistudiocdn.com/vite@^7.2.4",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@react-three/fiber": "https://aistudiocdn.com/@react-three/fiber@^9.4.0"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
-    <!-- Main Entry Point -->
+    <!-- Main Entry Point for Vite -->
     <script type="module" src="./index.tsx"></script>
     
     <script>
-      // Basic Service Worker Registration for PWA support
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          // This is a placeholder. For a real app, you would create a sw.js file
           // navigator.serviceWorker.register('/sw.js');
         });
       }

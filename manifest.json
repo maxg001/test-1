@@ -1,12 +1,15 @@
 {
+  "id": "/",
   "name": "Pixel Fluid Sandbox",
   "short_name": "PixelFluid",
-  "start_url": ".",
+  "start_url": "./",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#020617",
   "theme_color": "#020617",
   "description": "A 2D physics sandbox game with falling sand, water simulation, and AI generation.",
   "orientation": "landscape",
+  "categories": ["games", "simulation", "casual"],
   "icons": [
     {
       "src": "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4a7.png",
