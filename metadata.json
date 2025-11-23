@@ -1,0 +1,5 @@
+{
+  "name": "Pixel Fluid Sandbox",
+  "description": "A 2D physics sandbox game with falling sand, water simulation, and AI generation.",
+  "requestFramePermissions": []
+}
