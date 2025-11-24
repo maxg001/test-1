@@ -10,9 +10,8 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     // This 'define' block replaces variables in the browser code
     define: {
-      // Prevents "process is not defined" error in the browser
-      'process.env': {},
-      // Specifically inject the API Key
+      // Only define the specific API KEY. 
+      // Do NOT define 'process.env': {} as it breaks React's NODE_ENV check.
       'process.env.API_KEY': JSON.stringify(env.API_KEY),
     },
     build: {
