@@ -3,12 +3,7 @@ import { AIStructureResponse } from "../types";
 
 export const generateVoxelStructure = async (prompt: string): Promise<AIStructureResponse> => {
   try {
-    // Lazy initialization to prevent crash on app load if key is missing
-    const apiKey = process.env.API_KEY;
-    if (!apiKey) {
-      throw new Error("API Key is missing. Please configure Vercel Environment Variables.");
-    }
-    const ai = new GoogleGenAI({ apiKey });
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
     const response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
